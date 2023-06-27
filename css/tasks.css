@@ -13,3 +13,24 @@
     padding: 10px;
     align-items: center;
 }
+
+.tasks__content--done {
+    text-decoration-line: line-through;
+}
+
+.tasks__button {
+    width: 30px;
+    height: 30px;
+    background: white;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.tasks__button--toggleDone {
+    background-color: #009f00;
+}
+
+.tasks__button--remove {
+    background-color: #fa7474;
+}

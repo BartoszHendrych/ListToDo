@@ -3,7 +3,7 @@
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
-            content: newTaskContent, 
+            content: newTaskContent,
         });
 
         render();
@@ -22,39 +22,41 @@
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
-        removeButtons.forEach((removeButton, index) => {
+        removeButtons.forEach((removeButton, taskIndex) => {
             removeButton.addEventListener("click", () => {
-                removeTask(index);
+                removeTask(taskIndex);
             });
         });
 
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                toggleTaskDone(index);
+                toggleTaskDone(taskIndex);
             });
         });
     };
-    
+
     const render = () => {
         let htmlString = "";
 
-        for(const task of tasks) {
+        for (const task of tasks) {
             htmlString += `
-            <li
-            ${task.done ? " style=\"text-decoration: line-through\"" : ""}
-            >
-            <button class="js-done">Zrobione?</button>
-            <button class="js-remove">usuń</button>
-                ${task.content}
+            <li class="tasks__item js__task">
+                <button class="tasks__button tasks__button--toggleDone js-done">
+                ${task.done ? "✔" : ""}
+                </button>
+                <span class="${task.done ? "tasks__content--done" : ""}">${task.content}</span>
+                <button class="tasks__button tasks__button--remove js-remove">
+                🗑
+                </button>
             </li>
             `;
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        bindEvents ();
+        bindEvents();
     };
 
     const onFormSubmit = (event) => {
@@ -62,7 +64,7 @@
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
-        if(newTaskContent === "") {
+        if (newTaskContent === "") {
             return;
         }
 
