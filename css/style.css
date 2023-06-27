@@ -1,0 +1,13 @@
+html {
+    box-sizing: border-box;
+}
+   
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #e3e1e1;
+    font-family: 'Roboto', sans-serif;
+    word-break: break-word;
+}
