@@ -16,9 +16,15 @@
 
 .form__button {
     font-family: 'Roboto', sans-serif;
-    background-color: teal;
+    background: teal;
     color: white;
     border: none;
     cursor: pointer;
     padding: 10px;
+    transition: 1s;
+}
+
+.form__button:hover {
+    background: hsl(180, 100%, 35%);
+    transform: scale(1.2);
 }
