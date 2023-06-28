@@ -16,4 +16,4 @@ https://bartoszhendrych.github.io/ListToDo/
 3. JavaScript
 4. BEM
 
-![imagehtmlcssJS](images/obrazhtml.png)
+![imagehtmlcssJS](images/obrazhtml1.png)
