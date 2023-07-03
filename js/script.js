@@ -1,21 +1,32 @@
 {
-    const tasks = [];
+    let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
 
         render();
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ];
+
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            { ...tasks[taskIndex], done: !tasks[taskIndex].done},
+            ...tasks.slice(taskIndex + 1),
+        ];
+    
         render();
     };
 
@@ -37,32 +48,46 @@
         });
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-            <li class="tasks__item js__task">
-                <button class="tasks__button tasks__button--toggleDone js-done">
-                ${task.done ? "✔" : ""}
-                </button>
-                <span class="${task.done ? "tasks__content--done" : ""}">${task.content}</span>
-                <button class="tasks__button tasks__button--remove js-remove">
-                🗑
-                </button>
-            </li>
-            `;
+        <li class="tasks__item js__task">
+            <button class="tasks__button tasks__button--toggleDone js-done">
+            ${task.done ? "✔" : ""}
+            </button>
+            <span class="${task.done ? "tasks__content--done" : ""}">${task.content}</span>
+            <button class="tasks__button tasks__button--remove js-remove">
+            🗑
+            </button>
+        </li>
+        `;
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    };
+
+    const renderButtons = () => {
+
+    };
+
+    const bindButtonsEvents = () => {
+
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindEvents();
+        bindButtonsEvents();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        
-        const newTaskInput  = document.querySelector(".js-newTask")
+
+        const newTaskInput = document.querySelector(".js-newTask")
         const newTaskContent = newTaskInput.value.trim();
 
         if (newTaskContent !== "") {
