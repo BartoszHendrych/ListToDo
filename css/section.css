@@ -6,11 +6,8 @@
 .section__header {
     display: grid;
     grid-template-columns: 1fr auto auto;
-    grid-gap: 20px;
-    margin: 0px;
+    margin: 0 20px;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
 }
 
 @media (max-width: 767px) {
@@ -20,5 +17,11 @@
 }
 
 .section__body {
+    border-top: 1px solid #ccc;
     padding: 20px;
+}
+
+.section__title {
+    padding: 20px;
+    margin: 0;
 }
