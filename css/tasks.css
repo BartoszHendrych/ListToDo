@@ -32,5 +32,13 @@
 }
 
 .tasks__button--remove {
-    background-color: #fa7474;
+    background-color: #ff1616;
+}
+
+.tasks__button--toggleDone:hover {
+    background-color: hsl(120, 100%, 40%);
+}
+
+.tasks__button--remove:hover {
+    background-color: hsl(0, 100%, 65%);
 }
