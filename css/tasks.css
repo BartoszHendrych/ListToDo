@@ -27,6 +27,10 @@
     cursor: pointer;
 }
 
+.tasks__item--hidden {
+    display: none;
+}
+
 .tasks__button--toggleDone {
     background-color: #009f00;
 }

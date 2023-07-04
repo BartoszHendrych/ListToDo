@@ -16,8 +16,12 @@
     background: transparent;
 }
 
+.button__buttons:disabled {
+    color: #ccc;
+}
+
 .button__buttons:hover {
     color: hsl(180, 100%, 40%);
-    transition: 0.4s;
+    transition: 0.5s;
     cursor: pointer;
 }
