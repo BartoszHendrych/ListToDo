@@ -83,7 +83,22 @@
     };
 
     const renderButtons = () => {
+        const buttonsElement = document.querySelector(".js-buttons");
 
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
+            return;
+        }
+
+        buttonsElement.innerHTML = `
+        <button class="buttons__button js-HideDoneTasks">
+            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+        </button>
+        <button class="buttons__button js-AllTasksDone"
+        ${ tasks.every(({ done }) => done) ? " disabled " : ""}>
+        Ukończ Wszystkie
+        </button>
+        `;
     };
 
     const bindButtonsEvents = () => {
