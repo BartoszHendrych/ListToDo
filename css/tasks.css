@@ -25,6 +25,7 @@
     margin: 0;
     border: none;
     cursor: pointer;
+    color: white;
 }
 
 .tasks__item--hidden {
@@ -32,7 +33,7 @@
 }
 
 .tasks__button--toggleDone {
-    background-color: #009f00;
+    background-color: #017b01;
 }
 
 .tasks__button--remove {
@@ -40,7 +41,7 @@
 }
 
 .tasks__button--toggleDone:hover {
-    background-color: hsl(120, 100%, 40%);
+    background-color: hsl(120, 98%, 34%);
 }
 
 .tasks__button--remove:hover {
