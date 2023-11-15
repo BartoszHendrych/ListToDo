@@ -5,7 +5,7 @@ You can add new tasks and remove completed tasks.
 
 ## Demo 
 
-https://bartoszhendrych.github.io/ListToDo/
+https://bartoszhendrych.github.io/ToDos-List/
 
 ### Animation
 ![gif](images/Animation.gif)
