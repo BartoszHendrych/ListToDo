@@ -10,10 +10,3 @@ https://bartoszhendrych.github.io/listtodo/
 ### Animation
 ![gif](images/Animation.gif)
 
-### Technology:
-1. Html
-2. CSS
-3. JavaScript
-4. BEM
-
-![imagehtmlcssJS](images/obrazhtml1.png)
